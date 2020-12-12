@@ -31,6 +31,7 @@
 
       </div>
       <div class="tasks-wrapper">
+        <div v-if="conditionOne">
         <div class="task">
             <span class="label-text">Условие 1</span>
           <select class="input-task">
@@ -55,9 +56,11 @@
         </div>
         <div class="button">
           <button class="add" v-on:click="show = !show">Добавить диапазон</button>
-          <button class="delete" v-on:click="show = !show">Удалить диапазон</button>
+          <button class="delete" v-on:click="conditionOne = !conditionOne">Удалить условие</button>
+        </div>
         </div>
         <div class="header upcoming"></div>
+        <div v-if="conditionTwo">
         <div class="task">
           <span class="label-text"><b>Условие 2</b></span>
           <select class="input-task">
@@ -82,9 +85,11 @@
         </div>
         <div class="button">
           <button class="add" v-on:click="showType = !showType">Добавить диапазон</button>
-          <button class="delete" v-on:click="showType = !showType">Удалить диапазон</button>
+          <button class="delete" v-on:click="conditionTwo = !conditionTwo">Удалить условие</button>
+        </div>
         </div>
         <div class="header upcoming"></div>
+        <div v-if="conditionThree">
         <div class="task">
           <span class="label-text"><b>Условие 3</b></span>
           <select class="input-task">
@@ -109,11 +114,12 @@
         </div>
         <div class="button">
           <button class="add" v-on:click="showStatus = !showStatus">Добавить диапазон</button>
-          <button class="delete" v-on:click="showStatus = !showStatus">Удалить диапазон</button>
+          <button class="delete" v-on:click="conditionThree = !conditionThree">Удалить диапазон</button>
         </div>
         <div class="button-footer">
           <button class="testPool">Протестировать опрос</button>
         <button class="next">Далее</button>
+        </div>
         </div>
       </div>
       </div>
@@ -126,6 +132,9 @@ export default {
       show: false,
       showType: false,
       showStatus: false,
+      conditionOne: true,
+      conditionTwo: true,
+      conditionThree: true
     }
   }
   }
